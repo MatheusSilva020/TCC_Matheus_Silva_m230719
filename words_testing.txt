@@ -98,37 +98,32 @@ mateus nateus 5
 conteúdo cĩonteúdo 3
 seus sâus 6
 eu ìeu 3
-tempo utempo
-sempre sempce
-qual fual
-ela elal
-dia dil
-tudo tudy
-ela qelay
-só sód
-tudo kzudo
-corretor correptor
-tática trtica
-empoderamento ewpoderamento
-cachorro cachoçro
-gato îgato
-cavalo cakvalo
-relógio relógiuo
-canela canelac
-tênis tênisy
-ansiosa anciosa
-ansiosa ancciosa
-ansiosa ansioa
-empoderamento empoderamento
-asterisco asterístico
-gratuito gratuíto
-entretido entertido
-ritmo ritimo
-idiota indiota
-tomara tomare
-seja seje
-prevalecer provalecer
-esteja esteje
-mendigo mindigo
-cérebro célebro
-perturbar pertubar
+tempo utempo 3
+sempre sempce 1
+qual fual 5
+ela elu 2 
+dia dil 6
+tudo tudy 6 
+só sód 3
+tática trtica 6
+empoderamento enpoderamento 1
+cachorro cachowro 1
+gato gatu 2 
+cavalo cvalo 3
+relógio relogio 7
+canela camela 5
+tênis tenis 5
+ansiosa anciosa 1
+empoderamento emfoderamento 5
+asterisco asteriscu 2
+gratuito gratuíto 6
+entretido entertido 4
+ritmo rtimo 4
+idiota idioat 4
+tomara toamra 4
+seja seaj 4
+prevalecer pervalecer 4
+esteja esteaj 4
+mendigo emndigo 4
+cérebro célebro 1
+perturbar perutbar 4
