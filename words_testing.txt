@@ -46,10 +46,10 @@ apenas apemas 5
 empresa emqresa 5
 valor vaior 6
 será sera 7
-entre entke 6
-método méqodo 7
+entre entrw 6
+método metodo 7
 precisamos frecisamos 5
-ainda aimda 5
+ainda aimda 1
 vai van 6
 conteúdo conteudo 7
 seus çeus 1
@@ -76,8 +76,8 @@ forma forûa 6
 seja ceja 1
 então entao 7
 criar cwiar 1
-código cóàigo 6
-caso èaso 6
+código cóeigo 6
+caso oaso 6
 exemplo ezemplo 1
 tem túem 3
 usuário usuárin 6
@@ -112,7 +112,7 @@ gato gatu 2
 cavalo cvalo 3
 relógio relogio 7
 canela camela 5
-tênis tenis 5
+tênis tenis 7
 ansiosa anciosa 1
 empoderamento emfoderamento 5
 asterisco asteriscu 2
@@ -130,7 +130,7 @@ perturbar perutbar 4
 formiga furmiga 2
 gratidão gratidao 7
 vindo vimdo 1
-abraço abraco 1
+abraço abraco 7
 íris iris 7
 sorriso soriso 3
 gentileza gemtileza 1
@@ -149,11 +149,11 @@ jardim jardin 1
 realidade realidadi 2
 terra tera 3
 criança creança 2
-viagem viagen 5
+viagem viagen 1
 estrela estela 3
 sabedoria sapedoria 1
 esperança esperanca 7
-montanha momtanha 5
+montanha nontanha 5
 aventura avemtura 1
 lua luan 3
 querer puerer 5
