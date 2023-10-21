@@ -1,42 +1,12 @@
-Word(wrong/correction/right):esje - este - esse *  Groups(wrong/right): 1-1
-Word(wrong/correction/right):eme - em - ele *  Groups(wrong/right): 3-1
-Word(wrong/correction/right):sjava - soava - java *  Groups(wrong/right): 6-3
-Word(wrong/correction/right):ptyhon - ptyhon - python *  Groups(wrong/right): -4
-Word(wrong/correction/right):te - de - ter *  Groups(wrong/right): 1-3
-Word(wrong/correction/right):ebm - em - bem *  Groups(wrong/right): 3-4
-Word(wrong/correction/right):desigm - desigm - design *  Groups(wrong/right): -5
-Word(wrong/correction/right):pema - peça - pena *  Groups(wrong/right): 6-5
-Word(wrong/correction/right):vaior - maior - valor *  Groups(wrong/right): 1-6
-Word(wrong/correction/right):sera - ser - será *  Groups(wrong/right): 3-7
-Word(wrong/correction/right):eli - ele - ela *  Groups(wrong/right): 2-2
-Word(wrong/correction/right):so - o - só *  Groups(wrong/right): 3-7
-Word(wrong/correction/right):siàe - siàe - site *  Groups(wrong/right): -6
-Word(wrong/correction/right):cem - em - sem *  Groups(wrong/right): 3-1
-Word(wrong/correction/right):alexandra - alexandre - alexandria *  Groups(wrong/right): 2-3
-Word(wrong/correction/right):dms - dos - das *  Groups(wrong/right): 6-6
-Word(wrong/correction/right):ános - anos - nos *  Groups(wrong/right): 1-3
-Word(wrong/correction/right):leto - neto - luto *  Groups(wrong/right): 1-2
-Word(wrong/correction/right):nateus - ateus - mateus *  Groups(wrong/right): 3-5
-Word(wrong/correction/right):ìeu - seu - eu *  Groups(wrong/right): 6-3
-Word(wrong/correction/right):elu - ele - ela *  Groups(wrong/right): 2-2
-Word(wrong/correction/right):enpoderamento - enpoderamento - empoderamento *  Groups(wrong/right): -1
-Word(wrong/correction/right):emfoderamento - emfoderamento - empoderamento *  Groups(wrong/right): -5
-Word(wrong/correction/right):entertido - entertido - entretido *  Groups(wrong/right): -4
-Word(wrong/correction/right):toamra - toamra - tomara *  Groups(wrong/right): -4
-Word(wrong/correction/right):perutbar - perutbar - perturbar *  Groups(wrong/right): -4
-Word(wrong/correction/right):iris - iria - íris *  Groups(wrong/right): 6-7
-Word(wrong/correction/right):pas - as - paz *  Groups(wrong/right): 3-1
-Word(wrong/correction/right):dansa - dança - dança *  Groups(wrong/right): 6-1
-Word(wrong/correction/right):oniverso - universo - universo *  Groups(wrong/right): 1-2
-Word(wrong/correction/right):anconchego - anconchego - aconchego *  Groups(wrong/right): -3
-Word(wrong/correction/right):somho - sonho - sonho *  Groups(wrong/right): 5-1
-Word(wrong/correction/right):tera - ter - terra *  Groups(wrong/right): 3-3
-Word(wrong/correction/right):estela - esteja - estrela *  Groups(wrong/right): 1-3
-Word(wrong/correction/right):vinda - ainda - vida *  Groups(wrong/right): 6-3
-Word(wrong/correction/right):melodia - melodia - melodias *  Groups(wrong/right): -3
-Word(wrong/correction/right):senente - tenente - semente *  Groups(wrong/right): 1-5
-Word(wrong/correction/right):gratipicante - gratipicante - gratificante *  Groups(wrong/right): -5
-Word(wrong/correction/right):facinação - vacinação - fascinação *  Groups(wrong/right): 1-3
-Word(wrong/correction/right):resiliencia - resiliencia - resiliência *  Groups(wrong/right): -7
-Word(wrong/correction/right):isnpiração - isnpiração - inspiração *  Groups(wrong/right): -4
+Grupo WR :  [[('este', 1), 'esse', '1'], [('ele', 2), 'ela', '2'], [('dos', 6), 'das', '6'], [('ele', 2), 'ela', '2'], [('ter', 3), 'terra', '3']]
+Grupo RW :  [[('universo', 1), 'universo', '2'], [('sonho', 5), 'sonho', '1']]
+Grupo WW :  [[('em', 3), 'ele', '1'], [('ptyhon', ''), 'python', '4'], [('de', 1), 'ter', '3'], [('em', 3), 'bem', '4'], [('desigm', ''), 'design', '5'], [('peça', 6), 'pena', '5'], [('maior', 1), 'valor', '6'], [('ser', 3), 'será', '7'], [('o', 3), 'só', '7'], [('em', 3), 'sem', '1'], [('alexandre', 2), 'alexandria', '3'], [('anos', 1), 'nos', '3'], [('neto', 1), 'luto', '2'], [('ateus', 3), 'mateus', '5'], [('seu', 6), 'eu', '3'], [('perutbar', ''), 'perturbar', '4'], [('iria', 6), 'íris', '7'], [('as', 3), 'paz', '1'], [('esteja', 1), 'estrela', '3'], [('ainda', 6), 'vida', '3'], [('melodia', ''), 'melodias', '3'], [('tenente', 1), 'semente', '5'], [('gratipicante', ''), 'gratificante', '5'], [('vacinação', 1), 'fascinação', '3'], [('isnpiração', ''), 'inspiração', '4']]
+
+
+80.18% de 217 palavras, desconhecida é 5.07%,  acurácia de erros de grupo 82.49%
+Palavras Desconhecidas: 11
+Grupo palavras WW: 25
+Grupo palavras WR: 5
+Grupo palavras RW: 2
+Grupo palavras RR: 174
 
