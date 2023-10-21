@@ -1,54 +1,42 @@
-
-Word(wrong/correction/right):quaôdo - quando - quando *  Groups(wrong/right): 1-6 ANALISAR
-Word(wrong/correction/right):eòtá - está - está *  Groups(wrong/right): 6-3 ANALISAR
-Word(wrong/correction/right):assem - assim - assim *  Groups(wrong/right): 1-2 ANALISAR
-Word(wrong/correction/right):apemas - apenas - apenas *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):emqresa - empresa - empresa *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):frecisamos - precisamos - precisamos *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):van - vai - vai *  Groups(wrong/right): 1-6  ANALISAR
-Word(wrong/correction/right):çeus - seus - seus *  Groups(wrong/right): 6-1 ANALISAR
-Word(wrong/correction/right):temqo - tempo - tempo *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):pual - qual - qual *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):peln - pelo - pelo *  Groups(wrong/right): 1-6 ANALISAR
-Word(wrong/correction/right):usuárin - usuário - usuário *  Groups(wrong/right): 1-6 ANALISAR
-Word(wrong/correction/right):búm - bem - bem *  Groups(wrong/right): 1-6 ANALISAR
-Word(wrong/correction/right):nétodo - método - método *  Groups(wrong/right): 1-5 ANALISAR
-
-
-Word(wrong/correction/right):fual - qual - qual *  Groups(wrong/right): 1-5 ANALISAR
-
-
-Word(wrong/correction/right):enpoderamento - enpoderamento - empoderamento *  Groups(wrong/right): -1 ANALISAR
-Word(wrong/correction/right):relogio - relógio - relógio *  Groups(wrong/right): 6-7 ANALISAR
-Word(wrong/correction/right):camela - canela - canela *  Groups(wrong/right): 1-5 ANALISAR
-
-Word(wrong/correction/right):emfoderamento - emfoderamento - empoderamento *  Groups(wrong/right): -5 ANALISAR
-
-Word(wrong/correction/right):entertido - entertido - entretido *  Groups(wrong/right): -4 ANALISAR
-Word(wrong/correction/right):toamra - toamra - tomara *  Groups(wrong/right): -4 ANALISAR
-Word(wrong/correction/right):perutbar - perutbar - perturbar *  Groups(wrong/right): -4 ANALISAR
-
-Word(wrong/correction/right):dansa - dança - dança *  Groups(wrong/right): 6-1 ANALISAR
-Word(wrong/correction/right):oniverso - universo - universo *  Groups(wrong/right): 1-2 ANALISAR
-Word(wrong/correction/right):memoria - memória - memória *  Groups(wrong/right): 6-7 ANALISAR
-
-Word(wrong/correction/right):nontanha - montanha - montanha *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):puerer - querer - querer *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):nagia - magia - magia *  Groups(wrong/right): 1-5 ANALISAR
-Word(wrong/correction/right):anizade - amizade - amizade *  Groups(wrong/right): 1-5 ANALISAR
+Word(wrong/correction/right):esje - este - esse *  Groups(wrong/right): 1-1
+Word(wrong/correction/right):eme - em - ele *  Groups(wrong/right): 3-1
+Word(wrong/correction/right):sjava - soava - java *  Groups(wrong/right): 6-3
+Word(wrong/correction/right):ptyhon - ptyhon - python *  Groups(wrong/right): -4
+Word(wrong/correction/right):te - de - ter *  Groups(wrong/right): 1-3
+Word(wrong/correction/right):ebm - em - bem *  Groups(wrong/right): 3-4
+Word(wrong/correction/right):desigm - desigm - design *  Groups(wrong/right): -5
+Word(wrong/correction/right):pema - peça - pena *  Groups(wrong/right): 6-5
+Word(wrong/correction/right):vaior - maior - valor *  Groups(wrong/right): 1-6
+Word(wrong/correction/right):sera - ser - será *  Groups(wrong/right): 3-7
+Word(wrong/correction/right):eli - ele - ela *  Groups(wrong/right): 2-2
+Word(wrong/correction/right):so - o - só *  Groups(wrong/right): 3-7
+Word(wrong/correction/right):siàe - siàe - site *  Groups(wrong/right): -6
+Word(wrong/correction/right):cem - em - sem *  Groups(wrong/right): 3-1
+Word(wrong/correction/right):alexandra - alexandre - alexandria *  Groups(wrong/right): 2-3
+Word(wrong/correction/right):dms - dos - das *  Groups(wrong/right): 6-6
+Word(wrong/correction/right):ános - anos - nos *  Groups(wrong/right): 1-3
+Word(wrong/correction/right):leto - neto - luto *  Groups(wrong/right): 1-2
+Word(wrong/correction/right):nateus - ateus - mateus *  Groups(wrong/right): 3-5
+Word(wrong/correction/right):ìeu - seu - eu *  Groups(wrong/right): 6-3
+Word(wrong/correction/right):elu - ele - ela *  Groups(wrong/right): 2-2
+Word(wrong/correction/right):enpoderamento - enpoderamento - empoderamento *  Groups(wrong/right): -1
+Word(wrong/correction/right):emfoderamento - emfoderamento - empoderamento *  Groups(wrong/right): -5
+Word(wrong/correction/right):entertido - entertido - entretido *  Groups(wrong/right): -4
+Word(wrong/correction/right):toamra - toamra - tomara *  Groups(wrong/right): -4
+Word(wrong/correction/right):perutbar - perutbar - perturbar *  Groups(wrong/right): -4
+Word(wrong/correction/right):iris - iria - íris *  Groups(wrong/right): 6-7
+Word(wrong/correction/right):pas - as - paz *  Groups(wrong/right): 3-1
+Word(wrong/correction/right):dansa - dança - dança *  Groups(wrong/right): 6-1
+Word(wrong/correction/right):oniverso - universo - universo *  Groups(wrong/right): 1-2
+Word(wrong/correction/right):anconchego - anconchego - aconchego *  Groups(wrong/right): -3
+Word(wrong/correction/right):somho - sonho - sonho *  Groups(wrong/right): 5-1
+Word(wrong/correction/right):tera - ter - terra *  Groups(wrong/right): 3-3
+Word(wrong/correction/right):estela - esteja - estrela *  Groups(wrong/right): 1-3
 Word(wrong/correction/right):vinda - ainda - vida *  Groups(wrong/right): 6-3
-Word(wrong/correction/right):conhecinento - conhecimento - conhecimento *  Groups(wrong/right): 1-5
-Word(wrong/correction/right):abobora - abóbora - abóbora *  Groups(wrong/right): 6-7
-Word(wrong/correction/right):potografia - fotografia - fotografia *  Groups(wrong/right): 1-5
-Word(wrong/correction/right):ananhecer - amanhecer - amanhecer *  Groups(wrong/right): 1-5
-Word(wrong/correction/right):pelicidade - felicidade - felicidade *  Groups(wrong/right): 1-5
-Word(wrong/correction/right):melodia - melodia - melodias *  Groups(wrong/right): 6-3
+Word(wrong/correction/right):melodia - melodia - melodias *  Groups(wrong/right): -3
 Word(wrong/correction/right):senente - tenente - semente *  Groups(wrong/right): 1-5
-Word(wrong/correction/right):renovaçãn - renovação - renovação *  Groups(wrong/right): 1-6
 Word(wrong/correction/right):gratipicante - gratipicante - gratificante *  Groups(wrong/right): -5
 Word(wrong/correction/right):facinação - vacinação - fascinação *  Groups(wrong/right): 1-3
 Word(wrong/correction/right):resiliencia - resiliencia - resiliência *  Groups(wrong/right): -7
-Word(wrong/correction/right):encantanento - encantamento - encantamento *  Groups(wrong/right): 1-5
-Word(wrong/correction/right):deslumrbe - deslumrbe - deslumbre *  Groups(wrong/right): -4
 Word(wrong/correction/right):isnpiração - isnpiração - inspiração *  Groups(wrong/right): -4
-68.2% de 217 palavras, desconhecida é 5.07%,  acurácia de erros de grupo 70.51%
+

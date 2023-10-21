@@ -52,7 +52,7 @@ precisamos frecisamos 5
 ainda aimda 1
 vai van 6
 conteúdo conteudo 7
-seus çeus 1
+seus çeus 6
 eu eun 3
 todos todes 2
 tempo temqo 5
@@ -90,7 +90,7 @@ além âlém 6
 assim asim 3
 ter têr 6
 até vté 6
-bem búm 6
+bem búm 1
 método nétodo 5
 precisamos precizamos 1
 ainda aimda 1
@@ -138,7 +138,7 @@ campeão canpeão 1
 liberdade liberdadi 2
 escola scola 3
 paz pas 1
-dança dansa 1
+dança dansa 6
 universo oniverso 2
 tempo tenpo 1
 memória memoria 7
