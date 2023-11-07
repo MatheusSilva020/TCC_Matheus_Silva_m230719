@@ -225,15 +225,12 @@ def evalutate_corrections(tests, vocabulary):
         elif (str(corrected_word[0]) == correct) and (str(corrected_word[1]) != str(error_group)):
             list_RW.append(result)
             right_corrections_wrong_group += 1 
-            #print("Word(wrong/correction/right):" + wrong + " - "  + str(corrected_word[0]) + " - " + correct + " |  Groups(wrong/right): " + str(corrected_word[1]) + "-" + error_group)
         elif (str(corrected_word[0]) != correct) and (str(corrected_word[1]) == str(error_group)):
             list_WR.append(result)
             wrong_corrections_right_group += 1
-            #print("Word(wrong/correction/right):" + wrong +  " - " + str(corrected_word[0]) + " - " + correct + " |  Groups(wrong/right): " + str(corrected_word[1]) + "-" + error_group)
         else:
             list_WW.append(result)
             wrong_corrections_wrong_group += 1
-            #print("Word(wrong/correction/right):" + wrong  + " - " + str(corrected_word[0]) + " - " + correct + " |  Groups(wrong/right): " + str(corrected_word[1]) + "-" + error_group)
 
     accuracy_percentage = round(right_corrections_right_group*100/number_words, 2)
     accuracy_percentage_error_group = round((right_corrections_right_group + wrong_corrections_right_group)*100/number_words, 2)
