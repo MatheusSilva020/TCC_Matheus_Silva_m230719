@@ -34,42 +34,28 @@ def normalization_words(list_words):
         normalized_list.append(word.lower())
     return normalized_list
 
+
 #Corretor ortografico
 def known_words(words): 
     lista = set(w for w in words if w[0] in normalized_list_dict)
     return lista
 
-#Geração de palavras candidatas a possibilidades de correção
 def candidates_words(word):
     candidates = known_words([word]) | known_words(edits_distance_1(word)) | set([word])
     return candidates
-    #return (known_words([word]) or (known_words(edits_distance_1([word]))) or [word])
 
-#Probabilidade da palavra ser a correte dentre as possíveis:
-    #usar contexto do texto da Folha SP
 def probability(word): 
     if isinstance(word, tuple) == True:
         return (frequency[word[0]] /words_total)
     else:
         return (frequency[word]/words_total)
 
-#Maior probabilidade de correção da palavra
 def correction(word):
     result = max(candidates_words(word), key=probability) #, default=word)
     if isinstance(result, tuple) != True:
         return (word, "")
     else:
         return (result)
-
-#EDIT WORDS POSSIBILITIES
-    #GRUPOS DE ERROS:
-    #1- Emprego das consoantes e dos dígrafos + Emprego das formas que representam o som nasal
-    #2- Emprego de vogais
-    #3- Acréscimo e omissão de letras
-    #4- Inversão de letras
-    #5- Letras com formato semelhante
-    #6- Erros decorrentes de escritas particulares + Segmentação indevida das palavras
-    #7- Uso de acentuação
 
 def edit_word_insert(word_sliced, letters):
     error_group = 3
@@ -107,16 +93,15 @@ def edit_word_transpose(word_sliced, letters):
 
     return words
 
-#corrgir - existe insercao no for de substituicao(ultima letra extra)
 def edit_word_replace(word_sliced, letters):
-    error_group = 0 # POR PADRAO SER ESCRITA ESPECIFICA
+    error_group = 0 
 
     error_group_content = []
     new_possible_words = []
     vogals = ['a', 'e', 'i', 'o', 'u']
-    digrafos = ['ch', 'lh', 'nh', 'rr', 'ss', 'sc', 'sç', 'xc', 'xs', 'am', 'an', 'em', 'en', 'im', 'in', 'om', 'on', 'um', 'un', 'gu', 'qu'] #gu e qu somente nos casos de fonema único(sem som "/u/")
+    digrafos = ['ch', 'lh', 'nh', 'rr', 'ss', 'sc', 'sç', 'xc', 'xs', 'am', 'an', 'em', 'en', 'im', 'in', 'om', 'on', 'um', 'un', 'gu', 'qu'] 
     
-    letters_equals_p = ['p', 'f', 'q'] #melhorar as opções aqui
+    letters_equals_p = ['p', 'f', 'q']
     letters_equals_m = ['m', 'n']
 
     accents = ['á', 'â', 'à', 'ã', 'é', 'ê', 'è', 'ẽ', 'í', 'î', 'ì', 'ĩ', 'ó', 'ô', 'õ', 'ò', 'ú', 'û', 'ù', 'ũ', 'ç']
@@ -125,7 +110,7 @@ def edit_word_replace(word_sliced, letters):
         if len(D) > 0:
             for letter in letters:
                 removed_letter = D[:1]
-                new_possible_words.append(E + letter + D[1:]) #letra D[0] é substituida
+                new_possible_words.append(E + letter + D[1:])
                 if len(E) > 1 and len(D) > 1:
                     possible_digraphs = [(E[-1] + letter), (letter + D[1])]
                     next_letter_digraph = D[1:2]
@@ -139,11 +124,14 @@ def edit_word_replace(word_sliced, letters):
                     possible_digraphs = [(E + letter), (letter)]
                     next_letter_digraph = ""
 
-                if ((possible_digraphs[0] in digrafos) or (possible_digraphs[1] in digrafos)) and (next_letter_digraph not in vogals and next_letter_digraph != 'h')  and (letter != removed_letter): #se soma letra + letra anterior ou proxima resulta em digrafo
+                if ((possible_digraphs[0] in digrafos) or (possible_digraphs[1] in digrafos)) \
+                      and (next_letter_digraph not in vogals and next_letter_digraph != 'h')  and (letter != removed_letter): 
                     error_group = 1 #digrafos, consoantes ou sons nasais
-                elif (((removed_letter in letters_equals_p) and (letter in letters_equals_p)) or ((removed_letter in letters_equals_m) and (letter in letters_equals_m))) and (letter != removed_letter): #erros de formato semelhante
+                elif (((removed_letter in letters_equals_p) and (letter in letters_equals_p)) \
+                      or ((removed_letter in letters_equals_m) and (letter in letters_equals_m))) and (letter != removed_letter): 
                     error_group = 5
-                elif ((((removed_letter not in vogals) and (removed_letter not in accents)) and ((letter not in vogals) and (letter not in accents)) and (removed_letter not in accents))) and (letter != removed_letter): #consoantes incorretas)
+                elif ((((removed_letter not in vogals) and (removed_letter not in accents)) \
+                        and ((letter not in vogals) and (letter not in accents)) and (removed_letter not in accents))) and (letter != removed_letter):
                     error_group = 1 #digrafos, consoantes ou sons nasais
                 elif ((removed_letter in vogals) and (letter in vogals)) and (letter != removed_letter): #vogais incorretas
                     error_group = 2 #uso de vogais
@@ -156,7 +144,6 @@ def edit_word_replace(word_sliced, letters):
 
     return words 
 
-#distâncias de edição para as palavras no corretor
 def edits_distance_1(word):
     word_sliced = []
     letters = 'abcdefghijklmnopqrstuvwxyzáâàãéêèẽíîìĩóôõòúûùũç'
@@ -164,15 +151,13 @@ def edits_distance_1(word):
         word_sliced.append((word[:i], word[i:]))
 
     deletes    = edit_word_delete(word_sliced, letters)
-    #print(deletes)
     inserts    = edit_word_insert(word_sliced, letters)
-    #print(inserts)
     transposes = edit_word_transpose(word_sliced, letters)
-    #print(transposes)
     replaces   = edit_word_replace(word_sliced, letters)
-    #print(replaces)
 
     return set(deletes + transposes + replaces + inserts)
+
+
 
 #criador de dados de teste:
 def create_test_dataset(file):
