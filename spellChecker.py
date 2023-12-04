@@ -12,14 +12,10 @@ import os
 import pandas as pd 
 from nltk.test.portuguese_en_fixt import setup_module
 import nltk.corpus
+import re
+from collections import Counter
 
-#registrando palavaras do dicionario em ptbr
-with open('dicionario_USP_ptBr.txt', encoding='UTF-8') as f:
-    dict_content = f.read()
-
-dict_content = nltk.tokenize.word_tokenize(dict_content)
-
-#split_words(): recebe uma lista de strings, e cria um novo vetor que contem somente palavras válidas(sem caracteres nao alfanumericos) 
+#split_words(): recebe uma lista de strings, e cria um novo vetor que contem somente palavras válidas(sem caracteres nao alfanumericos). 
 def split_words(tokens_list):
     list_words = []
     for token in tokens_list:
@@ -27,7 +23,7 @@ def split_words(tokens_list):
             list_words.append(token)
     return list_words
 
-#normalizando as palavras(tornando todas em minúsculas):
+#normalization_words(): normalizando as palavras(tornando todas em minúsculas).
 def normalization_words(list_words):
     normalized_list = []
     for word in list_words:
@@ -35,28 +31,43 @@ def normalization_words(list_words):
     return normalized_list
 
 
-#Corretor ortografico
+#Corretor Ortográfico:
+#known_words(): retorna a lista de palavras e sua classificação de erro caso existam no dicionário.
 def known_words(words): 
     lista = set(w for w in words if w[0] in normalized_list_dict)
     return lista
 
+#candidates_words(): geração de palavras candidatas a possibilidades de correção.
 def candidates_words(word):
     candidates = known_words([word]) | known_words(edits_distance_1(word)) | set([word])
     return candidates
 
+#probability():Probabilidade da palavra ser a correte dentre as possíveis.
 def probability(word): 
     if isinstance(word, tuple) == True:
         return (frequency[word[0]] /words_total)
     else:
         return (frequency[word]/words_total)
 
+#correction(): função base do corretor, recebe uma palavra e retorna sua maior probabilidade de correção da palavra.
 def correction(word):
-    result = max(candidates_words(word), key=probability) #, default=word)
+    result = max(candidates_words(word), key=probability)
     if isinstance(result, tuple) != True:
         return (word, "")
     else:
         return (result)
+    
+#Possiblidades de correção de palavras:
+    #Grupos de erros(classificação):
+    #1- Emprego das consoantes e dos dígrafos + Emprego das formas que representam o som nasal
+    #2- Emprego de vogais
+    #3- Acréscimo e omissão de letras
+    #4- Inversão de letras
+    #5- Letras com formato semelhante
+    #6- Erros decorrentes de escritas particulares + Segmentação indevida das palavras
+    #7- Uso de acentuação
 
+#edit_word_insert(): edição de palavras através de adição.
 def edit_word_insert(word_sliced, letters):
     error_group = 3
     error_group_content = []
@@ -66,9 +77,9 @@ def edit_word_insert(word_sliced, letters):
             new_possible_words.append(E + letter + D)
             error_group_content.append(error_group)
     words = list(zip(new_possible_words, error_group_content))
-    
     return words
 
+#edit_word_delete(): edição de palavras através de remoção.
 def edit_word_delete(word_sliced, letters):
     error_group = 3
     error_group_content = []
@@ -78,9 +89,9 @@ def edit_word_delete(word_sliced, letters):
             new_possible_words.append(E + D[1:])
             error_group_content.append(error_group)
     words = list(zip(new_possible_words, error_group_content))
-
     return words
 
+#edit_word_transpose(): edição de palavras através de transposição.
 def edit_word_transpose(word_sliced, letters):
     error_group = 4
     error_group_content = []
@@ -90,22 +101,18 @@ def edit_word_transpose(word_sliced, letters):
             new_possible_words.append(E + D[1] + D[0] + D[2:])
             error_group_content.append(error_group)
     words = list(zip(new_possible_words, error_group_content))
-
     return words
 
+#edit_word_replace(): edição de palavras através de substituição.
 def edit_word_replace(word_sliced, letters):
     error_group = 0 
-
     error_group_content = []
     new_possible_words = []
     vogals = ['a', 'e', 'i', 'o', 'u']
     digrafos = ['ch', 'lh', 'nh', 'rr', 'ss', 'sc', 'sç', 'xc', 'xs', 'am', 'an', 'em', 'en', 'im', 'in', 'om', 'on', 'um', 'un', 'gu', 'qu'] 
-    
     letters_equals_p = ['p', 'f', 'q']
     letters_equals_m = ['m', 'n']
-
     accents = ['á', 'â', 'à', 'ã', 'é', 'ê', 'è', 'ẽ', 'í', 'î', 'ì', 'ĩ', 'ó', 'ô', 'õ', 'ò', 'ú', 'û', 'ù', 'ũ', 'ç']
-    
     for E, D in word_sliced:
         if len(D) > 0:
             for letter in letters:
@@ -123,7 +130,6 @@ def edit_word_replace(word_sliced, letters):
                 else:
                     possible_digraphs = [(E + letter), (letter)]
                     next_letter_digraph = ""
-
                 if ((possible_digraphs[0] in digrafos) or (possible_digraphs[1] in digrafos)) \
                       and (next_letter_digraph not in vogals and next_letter_digraph != 'h')  and (letter != removed_letter): 
                     error_group = 1 #digrafos, consoantes ou sons nasais
@@ -141,9 +147,9 @@ def edit_word_replace(word_sliced, letters):
                     error_group = 6 #erros de escritas particulares
                 error_group_content.append(error_group)
     words = list(zip(new_possible_words, error_group_content))
-
     return words 
 
+#edits_distance_1(): execução das correções na distância de edição 1 para as palavras no corretor.
 def edits_distance_1(word):
     word_sliced = []
     letters = 'abcdefghijklmnopqrstuvwxyzáâàãéêèẽíîìĩóôõòúûùũç'
@@ -154,7 +160,6 @@ def edits_distance_1(word):
     inserts    = edit_word_insert(word_sliced, letters)
     transposes = edit_word_transpose(word_sliced, letters)
     replaces   = edit_word_replace(word_sliced, letters)
-
     return set(deletes + transposes + replaces + inserts)
 
 
@@ -182,22 +187,18 @@ def adjust_format(word):
 #avaliador do corretor ortográfico: ( corrigir para mostrar as porcentagens de tipo de erro)
 def evalutate_corrections(tests, vocabulary):
     number_words = len(tests)
-
     right_corrections_right_group = 0
     right_corrections_wrong_group = 0
     wrong_corrections_right_group = 0
     wrong_corrections_wrong_group = 0
-
     list_RR = []
     list_RW = []
     list_WR = []
     list_WW = []
     list_unknown = []
-
     unknown = 0
     for correct, wrong, error_group in tests:
         error_group = error_group[0]
-        #corrected_word: word, error_group(made)
         corrected_word = correction(wrong)
         corrected_word = adjust_format(corrected_word)
         result = [corrected_word[0], corrected_word[1], correct, error_group]
@@ -216,7 +217,6 @@ def evalutate_corrections(tests, vocabulary):
         else:
             list_WW.append(result)
             wrong_corrections_wrong_group += 1
-
     accuracy_percentage = round(right_corrections_right_group*100/number_words, 2)
     accuracy_percentage_error_group = round((right_corrections_right_group + wrong_corrections_right_group)*100/number_words, 2)
     unknown_percentage = round(unknown*100/number_words, 2)
@@ -230,11 +230,14 @@ def evalutate_corrections(tests, vocabulary):
     print("Grupo palavras WR: " + str(len(list_WR)))
     print("Grupo palavras RW: " + str(len(list_RW)))
     print("Grupo palavras RR: " + str(len(list_RR)))
-
     return list_RR, list_RW, list_WR, list_WW, list_unknown
 
 #main()
 if __name__ == '__main__':
+    #registrando palavaras do dicionario em ptbr
+    with open('dicionario_USP_ptBr.txt', encoding='UTF-8') as f:
+        dict_content = f.read()
+    dict_content = nltk.tokenize.word_tokenize(dict_content)
     #criando vocabulario e dicionario de palavras
     folha_sp = nltk.corpus.mac_morpho.words()
     list_words_dict = split_words(dict_content)
